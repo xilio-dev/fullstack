@@ -83,7 +83,13 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: '大数据',
+          label: 'ELK',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'RocketMQ',
         },
         {to: '/blog', label: '博客', position: 'left'},
         {
