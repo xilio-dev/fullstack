@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://doc.xilio.cn',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -67,23 +67,18 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
-    /*docs: {
-      sidebar: {
-        hideable: true,
-      },
-    },*/
     navbar: {
       title: 'xilio',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'xilio Logo',
         src: 'img/logo.svg',
       },
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'javaSidebar',
           position: 'left',
-          label: 'ELK',
+          label: 'Java',
         },
         {
           type: 'docSidebar',
@@ -112,19 +107,11 @@ const config: Config = {
           ],
         },
         {
-          title: '社交',
+          title: '社区',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: '官网',
+              href: 'https://www.xilio.cn',
             },
           ],
         },
@@ -139,10 +126,14 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/stackoak',
             },
+            {
+              label: 'Gitee',
+              href: 'https://gitee.com/xilio',
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} xilio, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} xilio`,
     },
     prism: {
       theme: prismThemes.github,
