@@ -105,6 +105,12 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          sidebarId: 'webServerSidebar',
+          position: 'left',
+          label: 'Web服务器',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'testSidebar',
           position: 'left',
           label: '测试',
