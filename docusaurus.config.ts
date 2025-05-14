@@ -81,9 +81,9 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'queueSidebar',
           position: 'left',
-          label: 'RocketMQ',
+          label: '消息队列',
         },
         {
           type: 'docSidebar',
@@ -102,6 +102,12 @@ const config: Config = {
           sidebarId: 'sceneSidebar',
           position: 'left',
           label: '场景库',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'testSidebar',
+          position: 'left',
+          label: '测试',
         },
         {to: '/blog', label: '博客', position: 'left'},
         {
