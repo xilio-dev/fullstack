@@ -97,6 +97,12 @@ const config: Config = {
           position: 'left',
           label: 'Redis',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'sceneSidebar',
+          position: 'left',
+          label: '场景库',
+        },
         {to: '/blog', label: '博客', position: 'left'},
         {
           href: 'https://github.com/stackoak',
