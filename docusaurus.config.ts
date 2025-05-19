@@ -129,6 +129,11 @@ const config: Config = {
                     sidebarId: 'testSidebar',
                     position: 'left',
                     label: '测试',
+                },  {
+                    type: 'docSidebar',
+                    sidebarId: 'day15Sidebar',
+                    position: 'left',
+                    label: '每日15分钟',
                 },
                 {to: '/blog', label: '博客', position: 'right'},
                 {
