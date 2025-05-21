@@ -133,7 +133,7 @@ const config: Config = {
                     type: 'docSidebar',
                     sidebarId: 'day15Sidebar',
                     position: 'left',
-                    label: '每日15分钟',
+                    label: '每日15分钟博客速写',
                 },
                 {to: '/blog', label: '博客', position: 'right'},
                 {
