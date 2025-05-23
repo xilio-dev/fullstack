@@ -81,22 +81,17 @@ const config: Config = {
                 },
                 {
                     type: 'docSidebar',
-                    sidebarId: 'queueSidebar',
+                    sidebarId: 'middlewareSidebar',
                     position: 'left',
-                    label: '消息队列',
+                    label: '中间件',
                 },
                 {
                     type: 'docSidebar',
-                    sidebarId: 'mysqlSidebar',
+                    sidebarId: 'databaseSidebar',
                     position: 'left',
-                    label: 'MySQL',
+                    label: '数据库',
                 },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'redisSidebar',
-                    position: 'left',
-                    label: 'Redis',
-                },
+
                 {
                     type: 'docSidebar',
                     sidebarId: 'sceneSidebar',
@@ -123,17 +118,22 @@ const config: Config = {
                     sidebarId: 'cloudNativeSidebar',
                     position: 'left',
                     label: '云原生',
+                },{
+                    type: 'docSidebar',
+                    sidebarId: 'opensourceSidebar',
+                    position: 'left',
+                    label: '开源项目',
                 },
                 {
                     type: 'docSidebar',
                     sidebarId: 'testSidebar',
                     position: 'left',
                     label: '测试',
-                },  {
+                },   {
                     type: 'docSidebar',
-                    sidebarId: 'day15Sidebar',
+                    sidebarId: 'otherSidebar',
                     position: 'left',
-                    label: '每日15分钟博客速写',
+                    label: '其他',
                 },
                 {to: '/blog', label: '博客', position: 'right'},
                 {

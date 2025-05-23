@@ -1,23 +1,11 @@
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+xilio:
+  name: xilio
+  title: 全栈开发工程师 @ xilio
+  url: https://github.com/xilio1
+  image_url: https://foruda.gitee.com/avatar/1727861295948624568/5523591_xilio_1727861295.png!avatar200
   page: true
   socials:
-    x: yangshunz
-    github: yangshun
+    x: xilio1024
+    github: https://github.com/xilio1
+    gitee: https://gitee.com/xilio
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
-  socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
