@@ -1,5 +1,6 @@
 ---
 title: Map集合put方法返回值探究
+date: 2025-05-24
 authors: [xilio]
 tags: [Java,Map]
 ---
