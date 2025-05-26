@@ -118,18 +118,23 @@ const config: Config = {
                     sidebarId: 'cloudNativeSidebar',
                     position: 'left',
                     label: '云原生',
-                },{
+                }, {
                     type: 'docSidebar',
                     sidebarId: 'opensourceSidebar',
                     position: 'left',
                     label: '开源项目',
+                }, {
+                    type: 'docSidebar',
+                    sidebarId: 'algSidebar',
+                    position: 'left',
+                    label: '算法',
                 },
                 {
                     type: 'docSidebar',
                     sidebarId: 'testSidebar',
                     position: 'left',
                     label: '测试',
-                },   {
+                }, {
                     type: 'docSidebar',
                     sidebarId: 'otherSidebar',
                     position: 'left',
