@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-    title: 'xilio-🐮',
+    title: 'xilio',
     tagline: '当你排除一切不可能之后，剩下的，无论你多么的不相信，那就是真相！',
     favicon: 'img/favicon.ico',
 
