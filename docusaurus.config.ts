@@ -9,17 +9,17 @@ const config: Config = {
     tagline: '当你排除一切不可能之后，剩下的，无论你多么的不相信，那就是真相！',
     favicon: 'img/favicon.ico',
 
-    // Set the production url of your site here
-    url: 'https://doc.xilio.cn',
+    // 在此处设置您网站的生产url
+    url: 'https://xilio-doc.github.io',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
-    baseUrl: '/',
+    baseUrl: '/xilio-doc/',
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
-    organizationName: 'xilio', // Usually your GitHub org/user name.
-    projectName: 'xilio', // Usually your repo name.
-
+    organizationName: 'xilio1', // Usually your GitHub org/user name.
+    projectName: 'xilio-doc', // Usually your repo name.
+    trailingSlash: false,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
 
@@ -164,7 +164,7 @@ const config: Config = {
                     title: '社区',
                     items: [
                         {
-                            label: '官网',
+                            label: '动态博客站点',
                             href: 'https://www.xilio.cn',
                         },
                     ],
