@@ -12,7 +12,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: '后端开发',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/logo.svg').default,
     description: (
       <>
           暂时没有描述
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: '架构',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/logo.svg').default,
     description: (
       <>
           暂时没有描述
@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: '反思',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/logo.svg').default,
     description: (
       <>
         暂时没有描述
