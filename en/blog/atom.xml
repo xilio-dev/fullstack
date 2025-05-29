@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://xilio-doc.github.io/xilio-doc/en/blog</id>
+    <title>xilio Blog</title>
+    <updated>2025-05-24T14:38:36.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://xilio-doc.github.io/xilio-doc/en/blog"/>
+    <subtitle>xilio Blog</subtitle>
+    <icon>https://xilio-doc.github.io/xilio-doc/en/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Lua常用语法]]></title>
+        <id>https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/Lua常用语法</id>
+        <link href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/Lua常用语法"/>
+        <updated>2025-05-24T14:38:36.000Z</updated>
+        <author>
+            <name>xilio</name>
+            <uri>https://github.com/xilio1</uri>
+        </author>
+        <category label="Lua" term="Lua"/>
+        <category label="脚本语言" term="脚本语言"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Map集合put方法返回值探究]]></title>
+        <id>https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/Map集合put方法返回值探究</id>
+        <link href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/Map集合put方法返回值探究"/>
+        <updated>2025-05-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[遇到一个特别需要注意的Map集合使用问题，就是Map#put方法的返回值到底是什么，主要有以下几种情况：]]></summary>
+        <content type="html"><![CDATA[<p>遇到一个特别需要注意的Map集合使用问题，就是<strong>Map#put</strong>方法的返回值到底是什么，主要有以下几种情况：</p>
+<p>1、如果之前已经有对应的key，如果此时再放入一个相同key的值，此时是做更新覆盖操作，返回旧值
+2、如果之前没有对应的key，则执行添加操作，返回NULL</p>
+<div class="language-java codeBlockContainer_somn theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_N2_K"><pre tabindex="0" class="prism-code language-java codeBlock_K3wS thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_E6S5"><span class="token-line" style="color:#393A34"><span class="token plain">    Map&lt;String, Integer&gt; cache = new HashMap&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Integer r1=cache.put("key1",100); //返回NULL</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Integer r2=cache.put("key1",200); //返回100 覆盖</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup_OctH"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_yDFR" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_ZMF1"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_FHYl"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>备注：规则适用于Map下的各种实现，例如<strong>HashMap</strong>、<strong>ConcurrentHashMap</strong>都有相同的规则。</p>
+<p>补充：如果需要实现如果已经有对应key存在的时候不做任何操作，可以使用框架提供的另一个方法<strong>Map#putIfAbsent</strong>，案例如下：</p>
+<div class="language-java codeBlockContainer_somn theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_N2_K"><pre tabindex="0" class="prism-code language-java codeBlock_K3wS thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_E6S5"><span class="token-line" style="color:#393A34"><span class="token plain">    HashMap&lt;Object, Object&gt; map = new HashMap&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Object o = map.putIfAbsent("1", "2");</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    System.out.println(o);//返回的是null</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    System.out.println("--");</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Object o1 = map.putIfAbsent("1", "3");//key已经存在了，所以返回的是之前的值 不做任何操作</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    System.out.println(o1);//返回的是之前的值 o1=2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup_OctH"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_yDFR" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_ZMF1"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_FHYl"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
+        <author>
+            <name>xilio</name>
+            <uri>https://github.com/xilio1</uri>
+        </author>
+        <category label="Java" term="Java"/>
+        <category label="Map" term="Map"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JDK JMH基准测试]]></title>
+        <id>https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/JDK JMH基准测试</id>
+        <link href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/JDK JMH基准测试"/>
+        <updated>2025-05-21T02:50:08.000Z</updated>
+        <summary type="html"><![CDATA[介绍]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_Cuf2" id="介绍">介绍<a href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/JDK%20JMH%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95#%E4%BB%8B%E7%BB%8D" class="hash-link" aria-label="Direct link to 介绍" title="Direct link to 介绍">​</a></h2>
+<blockquote>
+<p>什么是【基准测试】？基准测试主要用于测试代码在JVM上的性能，例如比较不同算法的性能效率，执行时间，吞吐量，执行效率，多线程性能表现，垃圾回收等等</p>
+</blockquote>
+<p>JMH是openJdk自带的一款代码基准测试工具，具有很高的性能，完全隔离测试环境，使用简单，提供纳秒级别的测试精度，</p>
+<h2 class="anchor anchorWithStickyNavbar_Cuf2" id="使用">使用<a href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/JDK%20JMH%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95#%E4%BD%BF%E7%94%A8" class="hash-link" aria-label="Direct link to 使用" title="Direct link to 使用">​</a></h2>
+<p>在SpringBoot项目中，通过引入下面的依赖即可继承</p>
+<div class="language-xml codeBlockContainer_somn theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_N2_K"><pre tabindex="0" class="prism-code language-xml codeBlock_K3wS thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_E6S5"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.openjdk.jmh</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">jmh-core</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.36</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup_OctH"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_yDFR" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_ZMF1"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_FHYl"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
+        <author>
+            <name>xilio</name>
+            <uri>https://github.com/xilio1</uri>
+        </author>
+        <category label="JDK" term="JDK"/>
+        <category label="基准测试" term="基准测试"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MySQL 性能优化实践]]></title>
+        <id>https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/MySQL 性能优化实践</id>
+        <link href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/MySQL 性能优化实践"/>
+        <updated>2025-05-19T03:30:45.000Z</updated>
+        <summary type="html"><![CDATA[2025-05-19 MySQL 性能优化实践]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_Cuf2" id="2025-05-19-mysql-性能优化实践">2025-05-19 MySQL 性能优化实践<a href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/MySQL%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5#2025-05-19-mysql-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5" class="hash-link" aria-label="Direct link to 2025-05-19 MySQL 性能优化实践" title="Direct link to 2025-05-19 MySQL 性能优化实践">​</a></h2>
+<p>介绍一些常见的MySQL性能优化实践方法，优化和没有优化过的数据库性能具有天壤之别，特别是真实生产环境中，数据量特别大，动不动就是成千上万，如果不进行性能优化，那么用户体验将会极致拉低，开发中开发者首要做的优化就是查询优化，大部分场景都是读多写少。
+下面介绍几种不同维度的优化方法以及开发规范。</p>
+<h2 class="anchor anchorWithStickyNavbar_Cuf2" id="索引优化">索引优化<a href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/MySQL%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5#%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96" class="hash-link" aria-label="Direct link to 索引优化" title="Direct link to 索引优化">​</a></h2>
+<ul>
+<li>尽量采用前缀索引</li>
+<li>采用覆盖索引</li>
+<li>不容易区分的列不要建立索引，也就是相同数据太多的列，例如性别、状态等字段</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_Cuf2" id="sql查询优化">SQL查询优化<a href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/MySQL%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5#sql%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96" class="hash-link" aria-label="Direct link to SQL查询优化" title="Direct link to SQL查询优化">​</a></h2>
+<ul>
+<li>避免使用OR，应该采用union代替，union all不过滤相同数据，union会过滤重复数据</li>
+<li>避免使用select(*)，需要什么字段就用什么字段，否则无法使用索引</li>
+<li>避免使用count(*),应该用count(id)</li>
+<li>避免在where条件中使用函数和计算 否则索引会失效</li>
+<li>like模糊查询不要在前面加百分号，错误写法： “%key”，应该改为“key%”，否则索引会失效，效率大打折扣</li>
+<li>查询的时候不要用非类型的查询，例如!= 、NOT NULL</li>
+<li>查询条件的列视情况需要加索引</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_Cuf2" id="开发规范">开发规范<a href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/MySQL%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5#%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83" class="hash-link" aria-label="Direct link to 开发规范" title="Direct link to 开发规范">​</a></h2>
+<ul>
+<li>不同的开发环境采用不同的数据库</li>
+<li>数据库和表命名采用小写，字符不要太长，可以采用缩写的方式解决</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_Cuf2" id="数据类型优化">数据类型优化<a href="https://xilio-doc.github.io/xilio-doc/en/blog/2025/05/MySQL%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BC%98%E5%8C%96" class="hash-link" aria-label="Direct link to 数据类型优化" title="Direct link to 数据类型优化">​</a></h2>
+<ul>
+<li>不要在数据库中保存图片</li>
+<li>避免使用字符串类型ID作为主键</li>
+<li>字符集统一采用UTF-8</li>
+</ul>]]></content>
+        <author>
+            <name>xilio</name>
+            <uri>https://github.com/xilio1</uri>
+        </author>
+        <category label="MySQL" term="MySQL"/>
+        <category label="SQL" term="SQL"/>
+        <category label="性能优化" term="性能优化"/>
+    </entry>
+</feed>
