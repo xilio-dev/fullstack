@@ -20,6 +20,7 @@ pnpm build
 
 ### 部署到Github
 
+提前在github新建一个gh-pages分支
 使用 SSH:
 
 ```
