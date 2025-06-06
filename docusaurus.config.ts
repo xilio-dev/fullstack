@@ -91,13 +91,6 @@ const config: Config = {
                     position: 'left',
                     label: '数据库',
                 },
-
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'sceneSidebar',
-                    position: 'left',
-                    label: '场景库',
-                },
                 {
                     type: 'docSidebar',
                     sidebarId: 'webServerSidebar',
