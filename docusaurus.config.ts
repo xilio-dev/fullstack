@@ -70,7 +70,7 @@ const config: Config = {
             title: 'xilio',
             logo: {
                 alt: 'xilio Logo',
-                src: 'img/logo.svg',
+                src: 'img/logo4.png',
             },
             items: [
                 {
