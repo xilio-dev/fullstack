@@ -17,7 +17,7 @@ const config: Config = {
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
-    organizationName: 'xilio1', // Usually your GitHub org/user name.
+    organizationName: 'xilio-dev', // Usually your GitHub org/user name.
     projectName: 'xilio-doc', // Usually your repo name.
     trailingSlash: false,
     onBrokenLinks: 'throw',
@@ -40,7 +40,7 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/xilio1/xilio-doc/tree/main',
+                        'https://github.com/xilio-dev/xilio-doc/tree/main',
                 },
                 blog: {
                     showReadingTime: true,
@@ -135,7 +135,7 @@ const config: Config = {
                 },
                 {to: '/blog', label: '博客', position: 'right'},
                 {
-                    href: 'https://github.com/xilio1',
+                    href: 'https://github.com/xilio-dev',
                     label: 'GitHub',
                     position: 'right',
                 },
@@ -171,7 +171,7 @@ const config: Config = {
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/xilio1',
+                            href: 'https://github.com/xilio-dev',
                         },
                         {
                             label: 'Gitee',
