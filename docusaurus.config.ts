@@ -78,6 +78,11 @@ const config: Config = {
                     sidebarId: 'javaSidebar',
                     position: 'left',
                     label: 'Java',
+                },  {
+                    type: 'docSidebar',
+                    sidebarId: 'nettySidebar',
+                    position: 'left',
+                    label: 'Netty',
                 },
                 {
                     type: 'docSidebar',
