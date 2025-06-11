@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
     title: 'xilio',
-    tagline: '当你排除一切不可能之后，剩下的，无论你多么的不相信，那就是真相！',
+    tagline: '西洛者，码海一匠也，性嗜编码～',
     favicon: 'img/favicon.ico',
 
     // 在此处设置您网站的生产url
@@ -30,7 +30,13 @@ const config: Config = {
         defaultLocale: 'zh',
         locales: ['en', 'zh'],
     },
-
+    scripts: [
+        {
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?',
+            async: true,
+            'data-ad-client': 'ca-pub-5856655690528931',
+        },
+    ],
     presets: [
         [
             'classic',
@@ -78,7 +84,7 @@ const config: Config = {
                     sidebarId: 'javaSidebar',
                     position: 'left',
                     label: 'Java',
-                },  {
+                }, {
                     type: 'docSidebar',
                     sidebarId: 'nettySidebar',
                     position: 'left',
