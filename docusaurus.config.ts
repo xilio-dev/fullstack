@@ -91,47 +91,15 @@ const config: Config = {
                     label: 'GitHub',
                     position: 'right',
                 },
+                {
+                    label: 'Gitee',
+                    href: 'https://gitee.com/xilio',
+                    position: 'right'
+                },
             ],
         },
         footer: {
-            style: 'dark',
-            links: [
-                {
-                    title: '文档',
-                    items: [
-                        {
-                            label: '介绍',
-                            to: '/docs/base/intro',
-                        },
-                    ],
-                },
-                {
-                    title: '社区',
-                    items: [
-                        {
-                            label: '动态博客站点',
-                            href: 'https://www.xilio.cn',
-                        },
-                    ],
-                },
-                {
-                    title: '更多',
-                    items: [
-                        {
-                            label: '博客',
-                            to: '/blog',
-                        },
-                        {
-                            label: 'GitHub',
-                            href: 'https://github.com/xilio-dev',
-                        },
-                        {
-                            label: 'Gitee',
-                            href: 'https://gitee.com/xilio',
-                        },
-                    ],
-                },
-            ],
+            style: 'light',
             copyright: `Copyright © ${new Date().getFullYear()} xilio`,
         },
         prism: {
