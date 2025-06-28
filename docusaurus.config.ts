@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-    title: 'xilio',
-    tagline: '西洛者，码海一匠也，性嗜编码～',
+    title: '程序员xilio',
+    tagline: '后端 架构 云原生',
     favicon: 'img/favicon.ico',
 
     // 在此处设置您网站的生产url
@@ -22,7 +22,7 @@ const config: Config = {
     trailingSlash: false,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
-
+    //themes: ['@docusaurus/theme-live-codeblock'],
     // Even if you don't use internationalization, you can use this field to set
     // useful metadata like html lang. For example, if your site is Chinese, you
     // may want to replace "en" with "zh-Hans".
@@ -73,7 +73,7 @@ const config: Config = {
         // Replace with your project's social card
         image: 'img/docusaurus-social-card.jpg',
         navbar: {
-            title: 'xilio',
+            title: '程序员',
             logo: {
                 alt: 'xilio Logo',
                 src: 'img/logo4.png',
@@ -81,68 +81,9 @@ const config: Config = {
             items: [
                 {
                     type: 'docSidebar',
-                    sidebarId: 'javaSidebar',
+                    sidebarId: 'baseSidebar',
                     position: 'left',
-                    label: 'Java',
-                }, {
-                    type: 'docSidebar',
-                    sidebarId: 'nettySidebar',
-                    position: 'left',
-                    label: 'Netty',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'middlewareSidebar',
-                    position: 'left',
-                    label: '中间件',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'databaseSidebar',
-                    position: 'left',
-                    label: '数据库',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'webServerSidebar',
-                    position: 'left',
-                    label: 'Web服务器',
-                }, {
-                    type: 'docSidebar',
-                    sidebarId: 'distributedSidebar',
-                    position: 'left',
-                    label: '分布式',
-                }, {
-                    type: 'docSidebar',
-                    sidebarId: 'microserviceSidebar',
-                    position: 'left',
-                    label: '微服务',
-                }, {
-                    type: 'docSidebar',
-                    sidebarId: 'cloudNativeSidebar',
-                    position: 'left',
-                    label: '云原生',
-                }, {
-                    type: 'docSidebar',
-                    sidebarId: 'opensourceSidebar',
-                    position: 'left',
-                    label: '开源项目',
-                }, {
-                    type: 'docSidebar',
-                    sidebarId: 'algSidebar',
-                    position: 'left',
-                    label: '算法',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'testSidebar',
-                    position: 'left',
-                    label: '测试',
-                }, {
-                    type: 'docSidebar',
-                    sidebarId: 'otherSidebar',
-                    position: 'left',
-                    label: '其他',
+                    label: '青铜段位',
                 },
                 {to: '/blog', label: '博客', position: 'right'},
                 {
@@ -160,7 +101,7 @@ const config: Config = {
                     items: [
                         {
                             label: '介绍',
-                            to: '/docs/intro',
+                            to: '/docs/base/intro',
                         },
                     ],
                 },
@@ -194,6 +135,8 @@ const config: Config = {
             copyright: `Copyright © ${new Date().getFullYear()} xilio`,
         },
         prism: {
+            //设置高亮语言
+            additionalLanguages: ['powershell',"java","protobuf"],
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
         },
