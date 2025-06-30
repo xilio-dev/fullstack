@@ -1,0 +1,75 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## fetch
+:::tip
+git fetch 用来获取远程仓库最新更新信息，包括新的提交、分支、标签等，但这不会自动更新你的本地工作目录，仅会影响 .git 目录
+:::
+
+```js
+git fetch origin //origin是远程仓库,后面还可以指定具体的分支
+```
+## log 查看日志信息
+1、获取最新的更新，如果要获取到远程的需要先fetch或者pull
+```js
+git log origin --pretty=format:"%h %s %ad" --date=relative
+```
+
+## diff 查看本地分支和远程分支的差异
+```js
+git diff origin main //远程仓库main分支与本地的差异
+```
+
+## merge 分支合并
+:::tip
+用于多分支项目开发中将合并到主分支用于发布等。
+:::
+将dev分支的代码合并到当前所在的main分支：
+```js
+git merge dev
+```
+
+:::warning 注意
+在进行merge分支合并的时候可能会出现冲突导致合并失败，这种情况发生的原因有：
+- 同一文件同一部分被修改：两个分支对同一个文件同一部分进行了不同的修改
+- 文件重命名或删除冲突: dev删除了a.java,main修改了a.java
+- 分支移动文件冲突：dev和main同时移动了文件的位置
+- 提交历史冲突：两个分支的提交历史发生重叠或交叉
+- 多人修改同一文件不同部分但相互影响：虽然不同开发者修改同一文件的不同部分，但如果这些修改相互依赖或存在逻辑关联，合并时也可能出现冲突。例如一个开发者修改了函数的输入参数，另一个开发者修改了该函数的调用逻辑
+
+merge发生冲突的时候git会用特殊标记在文件中标记出，解决冲突的方式是查看代码选择保留的部分。
+:::
+
+## checkout 切换分支
+
+```js
+git checkout dev
+```
+
+## status 查看当前仓库工作目录和暂存区的状态
+:::info 功能
+- 当前所在分支。
+- 哪些文件被修改了但没暂存。
+- 哪些文件已暂存准备提交。
+- 哪些文件是新创建的，还未被Git跟踪。
+- 是否有文件被删除。
+- 本地分支与远程跟踪分支是否同步。
+:::
+常用参数选项：
+<Tabs>
+  <TabItem value="local" label="查看本地分支" default>
+   ```js
+    git branch
+    ```
+  </TabItem>
+  <TabItem value="all" label="查看本地和远程分支">
+   ```js
+       git branch -a
+       ```
+  </TabItem>
+  <TabItem value="remote" label="查看远程分支">
+   ```js
+       git branch -r
+       ```
+  </TabItem>
+</Tabs>

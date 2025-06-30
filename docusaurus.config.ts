@@ -85,6 +85,12 @@ const config: Config = {
                     position: 'left',
                     label: '青铜段位',
                 },
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'middleSidebar',
+                    position: 'left',
+                    label: '黄金段位',
+                },
                 {to: '/blog', label: '博客', position: 'right'},
                 {
                     href: 'https://github.com/xilio-dev',
