@@ -133,14 +133,21 @@ git checkout -b <local-branch> origin/<remote-branch>
 git checkout --orphan <branch-name>
 #git checkout --orphan doc
 ```
-6. 查看所有分支
+6. 查看分支
 ```js
-git branch -a #包含远程分支
+git branch -a #包含远程分支和本地分支
+git branch -r #只包含远程分支
 ```
 7. 删除分支
+:::tip 提示
+删除分支的时候需要切换到别的分支才能够删除～
+:::
 ```js
 git branch -d <branch-name>  # 安全删除
 git branch -D <branch-name>  # 强制删除未合并分支
 ```
-
+上面只是删除本地仓库分支，还需要同步删除远程仓库分支：
+```js
+git push origin -d <branch-name>
+```
 ## stash
