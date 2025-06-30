@@ -110,7 +110,7 @@ const config: Config = {
         },
         prism: {
             //设置高亮语言
-            additionalLanguages: ['powershell',"java","protobuf"],
+            additionalLanguages: ['powershell',"java","protobuf","python"],
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
         },

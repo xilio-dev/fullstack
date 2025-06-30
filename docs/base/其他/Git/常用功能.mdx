@@ -1,15 +1,26 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+
+
 ## fetch
 :::tip
 git fetch 用来获取远程仓库最新更新信息，包括新的提交、分支、标签等，但这不会自动更新你的本地工作目录，仅会影响 .git 目录
 :::
 
 ```js
-git fetch origin //origin是远程仓库,后面还可以指定具体的分支
+git fetch origin#origin是远程仓库,后面还可以指定具体的分支
 ```
 ## log 查看日志信息
+:::info 用法
+1. 限制显示的提交数量: `git log -n 2`
+2. 查看指定文件的提交记录: `git log <file>`
+3. 以ASCII图形化方式显示提交历史: git log --graph,直观显示分支和合并操作，常与--oneline、--decorate结合使用
+4. 显示文件变更统计: `git log --stat`，显示每个提交的文件变更统计信息，如修改的文件数量、插入和删除的行数等
+5. 查看简洁提交历史: `git log --oneline`,每个提交显示一行，包含简短哈希值和提交信息前几行，便于快速浏览
+6. 查看所有提交记录：`git log`
+
+:::
 1、获取最新的更新，如果要获取到远程的需要先fetch或者pull
 ```js
 git log origin --pretty=format:"%h %s %ad" --date=relative
@@ -17,7 +28,7 @@ git log origin --pretty=format:"%h %s %ad" --date=relative
 
 ## diff 查看本地分支和远程分支的差异
 ```js
-git diff origin main //远程仓库main分支与本地的差异
+git diff origin main#远程仓库main分支与本地的差异
 ```
 
 ## merge 分支合并
@@ -73,3 +84,63 @@ git checkout dev
        ```
   </TabItem>
 </Tabs>
+
+## reflog
+:::info 功能
+- 查看操作历史
+:::
+git reflog
+
+![img.png](./_img/img.png)
+
+
+## rebase
+
+
+## branch 分支管理
+:::warning
+- 命名规范：避免空格或特殊字符，推荐使用feature/xxx、bugfix/xxx等格式。
+- 切换前提交更改：未提交的修改可能阻碍分支切换，需先提交或暂存（git stash）
+:::
+1. 基于当前分支创建新分支
+```js
+git branch <branch-name>
+#git branch dev
+```
+2. 从指定提交/分支创建
+```shell
+git branch <branch-name> <commit-hash-or-branch>
+#git branch bugfix v1.2（基于标签v1.2创建一个bugfix分支）
+```
+3. 创建并切换分支
+```js
+git checkout -b <branch-name>
+#git checkout -b test
+```
+3. 推送本地分支到远程
+```js
+git push -u origin <branch-name>
+#git push -u origin test
+```
+4. 从远程分支创建本地分支
+```js
+git checkout -b <local-branch> origin/<remote-branch>
+#git checkout -b dev origin/main
+```
+
+5. 创建空分支（无提交历史）
+```js
+git checkout --orphan <branch-name>
+#git checkout --orphan doc
+```
+6. 查看所有分支
+```js
+git branch -a #包含远程分支
+```
+7. 删除分支
+```js
+git branch -d <branch-name>  # 安全删除
+git branch -D <branch-name>  # 强制删除未合并分支
+```
+
+## stash
