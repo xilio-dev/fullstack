@@ -1,4 +1,23 @@
+---
+title: Docusaurus使用手册
+description: Docusaurus使用手册.
+authors:
+  - name: xilio
+    title: xilio-dev
+    url: https://github.com/xilio-dev
+    image_url: https://avatars.githubusercontent.com/u/195513923?…00&u=fb14317bf4a11585a689fa3e7c4c3a9417ff4d85&v=4
+    socials:
+      github: xilio-dev
+tags: [Docusaurus, 教程]
+image: https://avatars.githubusercontent.com/u/195513923?…00&u=fb14317bf4a11585a689fa3e7c4c3a9417ff4d85&v=4
+hide_table_of_contents: false
+---
 
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
+
+<!-- truncate -->
 ## 高亮显示代码一行或者几行
 1、highlight-next-line您可以使用带有**highlight-start**和的注释**highlight-end**来选择要突出显示的行。
 

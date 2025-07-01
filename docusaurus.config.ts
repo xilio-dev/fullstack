@@ -14,7 +14,6 @@ const config: Config = {
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: '/xilio-doc/',
-
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'xilio-dev', // Usually your GitHub org/user name.
@@ -22,7 +21,6 @@ const config: Config = {
     trailingSlash: false,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
-    //themes: ['@docusaurus/theme-live-codeblock'],
     // Even if you don't use internationalization, you can use this field to set
     // useful metadata like html lang. For example, if your site is Chinese, you
     // may want to replace "en" with "zh-Hans".
@@ -70,6 +68,11 @@ const config: Config = {
     ],
 
     themeConfig: {
+        //设置内容标题级别
+        tableOfContents: {
+            minHeadingLevel: 2,
+            maxHeadingLevel: 5,
+        },
         // Replace with your project's social card
         image: 'img/docusaurus-social-card.jpg',
         navbar: {
@@ -111,8 +114,8 @@ const config: Config = {
         prism: {
             //设置高亮语言
             additionalLanguages: ['powershell',"java","protobuf","python"],
-            theme: prismThemes.github,
-            darkTheme: prismThemes.dracula,
+            theme: prismThemes.oneDark,//白天主题
+            darkTheme: prismThemes.oneDark,//黑夜主题
         },
     } satisfies Preset.ThemeConfig,
 };
