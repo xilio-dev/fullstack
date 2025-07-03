@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxilio=self.webpackChunkxilio||[]).push([[5870],{1820:l=>{l.exports=JSON.parse('{"tags":[{"label":"Docusaurus","permalink":"/fullstack/en/blog/tags/docusaurus","count":2},{"label":"\u6559\u7a0b","permalink":"/fullstack/en/blog/tags/\u6559\u7a0b","count":2}]}')}}]);

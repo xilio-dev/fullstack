@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxilio=self.webpackChunkxilio||[]).push([[1903],{1912:l=>{l.exports=JSON.parse('{"blogBasePath":"/fullstack/blog","blogTitle":"Blog","authorsListPath":"/fullstack/blog/authors"}')}}]);

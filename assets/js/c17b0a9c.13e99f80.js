@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxilio=self.webpackChunkxilio||[]).push([[1117],{6171:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/fullstack/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
