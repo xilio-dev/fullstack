@@ -10,14 +10,14 @@ const config: Config = {
     favicon: 'img/favicon.ico',
 
     // 在此处设置您网站的生产url
-    url: 'https://xilio-doc.github.io',
+    url: 'https://fullstack.github.io',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
-    baseUrl: '/xilio-doc/',
+    baseUrl: '/fullstack/',
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'xilio-dev', // Usually your GitHub org/user name.
-    projectName: 'xilio-doc', // Usually your repo name.
+    projectName: 'fullstack', // Usually your repo name.
     trailingSlash: false,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -44,7 +44,7 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/xilio-dev/xilio-doc/tree/main',
+                        'https://github.com/xilio-dev/fullstack/tree/main',
                 },
                 blog: {
                     showReadingTime: true,
@@ -86,13 +86,13 @@ const config: Config = {
                     type: 'docSidebar',
                     sidebarId: 'baseSidebar',
                     position: 'left',
-                    label: '青铜段位',
+                    label: '基础篇',
                 },
                 {
                     type: 'docSidebar',
                     sidebarId: 'middleSidebar',
                     position: 'left',
-                    label: '黄金段位',
+                    label: '高级篇',
                 },
                 {to: '/blog', label: '博客', position: 'right'},
                 {
